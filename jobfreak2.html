@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show/Hide Paragraph Text</title>
+  <style>
+  
+    
+    body{
+                padding:0%;
+                margin:0% ;
+                display: flex;
+                
+            }
+            #leftpanel{
+                width: 20%;
+                background-color: #f1f1f1;
+                padding:20px;
+                color:pink;
+                font-weight: 200;
+               
+                float: left;
+            
+                box-sizing: border-box;
+                
+            } 
+            #leftpanel li{
+                list-style: none;
+                margin-right: 30px;
+                margin-top: 20px;
+            }
+            #leftpanel li a{
+
+                padding: 2px 23px;
+                font-size: 1.3 rem;
+                font-weight: 100;
+               
+                margin: auto;
+                color: green;
+                text-align: center;
+                display: flex;
+                justify-content: space-between;
+            }
+            #leftpanel li a:hover{
+                background: black;
+                color: white;
+                transition: 0.3s;
+               
+            }
+            #content{
+                width: 80%;
+                padding: 20px;
+             
+            }
+           
+            
+                
+            
+             
+             
+             #home{
+                width: 80%;
+                padding: 20px;
+                display: none;
+                color: wheat;
+                background-color: black;
+              
+            }
+            #contact{
+                width: 80%;
+                padding: 20px;
+                display: none;
+                color: goldenrod;
+                background-color: pink;
+              
+            }
+            #information{
+                width: 80%;
+                padding: 20px;
+                display: none;
+                color:coral;
+                background-color: brown;
+            }
+            #guide{
+                width: 80%;
+                padding: 20px;
+                display: none;
+                color: blue;
+                background-color: blueviolet;
+            }
+            #button
+            {
+                list-style: none;
+                margin-right: 30px;
+                margin-top: 20px;
+                color: blueviolet;
+            }
+            
+  </style>
+</head>
+<body>
+    <div id="leftpanel">
+        <ul>
+            <li><a href="#" onclick="showContent(home)">home</a></li>
+            
+                    
+            <li><a href="#" onclick="showContent(contact)">contact</a></li>
+            <li><a href="#" onclick="showContent(information)">information</a></li>
+            <li><a href="#" onclick="showContent(guide)">guide</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <div id="home">
+            <h2>welcome to home page</h2>
+            <p>this is my home page.
+                my name is Sakshi Deshpande
+                I am a DIEMS Alumini
+                I have passed out in 2023
+            </p>
+            
+        </div>
+        <div id="contact">
+            <h2>welcome to contact page</h2>
+            <p>this is my contact  page
+                my phone no is 9246778256
+                
+            </p>
+
+            
+        </div>
+        <div id="information">
+            <h2>welcome to information page</h2>
+            <p>this is my information page
+                I love to work with html and css
+                Also, I have strong knowledge of core java-oops and flow statements
+
+                
+            </p>
+            
+        </div>
+        <div id="guide">
+            <h2>welcome to guide page</h2>
+            
+            <p>this is my guide page
+                Also ,i have 1 month experience of chetan Transelectricals
+                i am an electronics and telecommunication engineer
+                i am really keen and really in need of this internship
+            </p>
+            
+        </div>
+    </div>
+    <div class="button">
+        <button onclick="homeParagraph()">home</button>
+        <p id="home"></p>
+        <br>
+        <button onclick="contactParagraph()">contact</button>
+        <p id="contact"></p>
+        <br>
+        <button onclick="information()">information</button>
+        <p id="information"></p>
+        <br>
+        <button onclick="guide()">guide</button>
+        <p id="guide"></p>
+      
+
+    </div>
+ 
+ 
+  <script>
+
+    function homeParagraph() {
+      var home = document.getElementById("home");
+      if (home.style.display === "none") {
+        home.style.display = "block";
+      } else {
+        home.style.display = "none";
+      }
+    }
+    function contactParagraph() {
+      var contact = document.getElementById("contact");
+      if (contact.style.display === "none") {
+        contact.style.display = "block";
+      } else {
+        contact.style.display = "none";
+      }
+    }
+    function information() {
+      var information = document.getElementById("information");
+      if (information.style.display === "none") {
+        information.style.display = "block";
+      } else {
+        information.style.display = "none";
+      }
+    }
+    function guide() {
+      var guide = document.getElementById("guide");
+      if (guide.style.display === "none") {
+        guide.style.display = "block";
+      } else {
+        guide.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
