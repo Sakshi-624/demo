@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>jquery filtering methods</h2>
+    <div id="first">
+        <p id="p1">collectively known as Wikipedians, through open collaboration and using a wiki-based editing system
+        </p>
+        <p id="p2">Wikipedia is a free-content online encyclopedia written and maintained by a community of volunteers
+        </p>
+    </div>
+    <ul>
+        <li>grapes</li>
+        <li>oranges</li>
+        <li>Apples</li>
+        <li>cherry</li>
+    </ul>
+    <div id="second">
+        <p class="test">Who is the author of Wikipedia The Free Encyclopedia?
+            There are two co-founders of Wikipedia: Larry Sanger (born 1968)</p>
+        <p id="p3">American internet project developer. Jimmy Wales (born 1966), American-British internet entrepreneur.
+        </p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('p').first().css('background', 'blue');
+            $('#second  p').first().css('background', 'pink');
+            $('p').last().css('background', 'green');
+            $('ul li').last().css('background', 'green');
+            $('ul li').eq(2).css('background', 'lightblue');
+            $('p').filter('.test').css('background', 'lightblue');
+            $(' #second p').not('.test').css('background', 'pink');
+            $('#second p').slice().css('background','brown')
+            $('ul li').slice(1,3).css('background','black')
+        });
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= ,initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <div id="main-outer">
+        <h2>main outer</h2>
+    </div>
+    <div id="outer" style="position: relative ;">
+        <h2>outer</h2>
+    </div>
+    <div id="inner">
+        <h2 id="child-head">inner</h2>
+        <div>A</div>
+        <div>B</div>
+        <div id="child-C">C</div>
+        <div>D</div>
+        <div>E</div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //$("#child-C").parent().css('background', 'red');
+            // $('#inner').parent().css('background', 'blue');
+            //$('#outer').parent().css('background', 'pink');
+            //$("#child-head").parent().css('background', 'yellow');
+            // $("#child-C").parents().css('background', 'red');
+           // $("#child-C").parentsUntil("#main-outer").css('background', 'darkmagenta');
+           // $("#child-C").offsetParent("#main-outer").css('background', 'yellow');
+            //$("#child-C").offsetParent().css('background', 'yellow');
+            $("#child-C").closest('div').css('background','lightblue')
+
+        });
+    </script>
+
+
+
+    </script>
+
+</html>

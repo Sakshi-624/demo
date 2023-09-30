@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="main-outer">
+        <h2>main outer</h2>
+    </div>
+    <div id="outer" style="position: relative ;">
+        <h2>outer</h2>
+    </div>
+    <div id="inner">
+        <h2 id="child-head">inner</h2>
+        <div class="test">A</div>
+        <div>B</div>
+        <div id="child-C">C</div>
+        <div>D</div>
+        <div class="test">E</div>
+    </div>
+    
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+
+    })
+    $("#child-C").siblings('h2').css('background','red')
+    //$("#child-C").siblings('.test').css('background','red')
+    $("#child-C").next().css('background','lightblue')
+    $("#child-C").prev().css('background','coral')
+    $("#child-C").prevAll().css('background','coral')
+    //$("#child-C").nextAll().css('background','violet')
+    $("#child-C").nextUntil('.test').css('background','pink')
+    $("#child-C").prevUntil('.test').css('background','blue')
+   
+</script>
+</html>

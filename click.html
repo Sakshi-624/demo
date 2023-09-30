@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+    <p>if you click on me i will disappear</p>
+    <br>
+    <p>Hello!,click me away</p>
+    <br>
+    <p>click me if you can</p>
+
+
+    <script>
+        $(document).ready(function(){
+            $('p').click(function(){
+                $(this).hide();
+            })
+        })
+    </script>
+    
+</body>
+</html>

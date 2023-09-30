@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="container">
+       Name: <input type="text" name="text" id="t1" value="">
+       <br>
+       Email:<input type="text" name="text2" id="t2" value="">
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("#t1").focus(function(){
+                $(this).css("background-color","lightblue")
+            });
+            $("#t2").blur(function(){
+                $(this).css("background-color","pink")
+            });
+            
+          
+        })
+    </script>
+    
+</body>
+</html>

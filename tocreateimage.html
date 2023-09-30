@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <title>Image Filters</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: capitalize;
+    }
+
+    .container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 90px;
+    }
+
+    .container .filter {
+        margin-right: 40px;
+    }
+
+    .container .filter .inputBox {
+        margin: 10px 0;
+    }
+
+    .container .filter .inputBox .span {
+        display: block;
+        color: #333;
+        font-size: 20px;
+        margin: 10px 0;
+    }
+
+    .container .filter .inputBox .input {
+        -webkit-appearance: none;
+        height: 10px;
+        width: 500px;
+        background: #666;
+        border-radius: 50px;
+    }
+
+    .container .filter .inputBox .input::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 10px;
+        width: 20px;
+        background: #666;
+        border-radius: 50px;
+        background: coral;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+
+    .container .result #image {
+        width: 600px;
+        pointer-events: none;
+    }
+
+    .container .result .output {
+        min-height: 65px;
+        width: 600px;
+        background: #ddd;
+        color: #333;
+        font-size: 20px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="filter">
+            <div class="inputBox">
+                <span>grayscale</span>
+                <input type="range" min="0" max="100" value="0" id="grayscale">
+            </div>
+
+            <div class="inputBox">
+                <span>sepia</span>
+                <input type="range" min="0" max="100" value="0" id="sepia">
+            </div>
+
+            <div class="inputBox">
+                <span>blur</span>
+                <input type="range" min="0" max="100" value="0" id="blur">
+            </div>
+
+            <div class="inputBox">
+                <span>invert</span>
+                <input type="range" min="0" max="100" value="0" id="invert">
+            </div>
+
+            <div class="inputBox">
+                <span>opacity</span>
+                <input type="range" min="0" max="100" value="100" id="opacity">
+            </div>
+
+            <div class="inputBox">
+                <span>brightness</span>
+                <input type="range" min="0" max="100" value="100" id="brightness">
+            </div>
+
+            <div class="inputBox">
+                <span>contrast</span>
+                <input type="range" min="0" max="100" value="100" id="contrast">
+            </div>
+
+            <div class="inputBox">
+                <span>saturate</span>
+                <input type="range" min="0" max="200" value="100" id="saturate">
+            </div>
+        </div>
+        <div class="result">
+            <img src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" id="img">
+
+            <div class="output">example</div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.inputBox input').on('input', function () {
+                let grayscale = $('#grayscale').val()
+                let sepia = $('#sepia').val()
+                let blur = $('#blur').val()
+                let invert = $('#invert').val()
+                let opacity = $('#opacity').val()
+                let brightness = $('#brightness').val()
+                let contrast = $('#contrast').val()
+                let saturate = $('#saturate').val()
+
+                $('#img').css('filter', 'grayscale(' + grayscale + '%) sepia(' + sepia + '%) blur(' + blur + 'px) invert(' + invert + '%) opacity(' + opacity + '%) brightness(' + brightness + '%) contrast(' + contrast + '%) saturate(' + saturate + '%)');
+            })
+        })
+    </script>
+</body>
+</html>

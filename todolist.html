@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple To-Do List</title>
+</head>
+<body>
+    <input type="text" id="taskinput" placeholder="Add a new task">
+    <button onclick="addtask()">Add</button>
+
+    <ul id="tasklist"></ul>
+    <script>
+        function addtask(){
+            const tasktext = document.getElementById('taskinput').value;
+            if(tasktext.trim() === ''){
+                alert("Please enter a task.");
+                return;
+            }
+
+            const listitem = document.createElement('li');
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+
+            const label = document.createElement('label');
+            label.textContent = tasktext;
+
+            const removebutton = document.createElement('button');
+            removebutton.textContent = 'Remove';
+            removebutton.onclick = function(){
+                listitem.remove();
+            }
+
+            listitem.appendChild(checkbox);
+            listitem.appendChild(label);
+            listitem.appendChild(removebutton);
+
+     
+            document.getElementById('tasklist').appendChild(listitem);
+
+            document.getElementById('taskinput').value = '';
+        }
+    </script>
+</body>
+</html>
