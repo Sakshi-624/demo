@@ -1,0 +1,79 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <input id="t1" type="text" placeholder="">
+        <input id="t2" type="text" placeholder="">
+        <input id="t3" type="text" placeholder="">
+        <input id="t4" type="text" placeholder="">
+        <button id="button">submit</button>
+        <table border="1">
+            <tr>
+                <th>name</th>
+                <th>address</th>
+                <th>email</th>
+                <th>phone number</th>
+            </tr>
+            <tbody id="tbody">
+
+            </tbody>    
+        </table>
+  
+        <script>
+           let a = document.getElementById("t1");
+           let b = document.getElementById("t2");
+           let c = document.getElementById("t3");
+           let d = document.getElementById("t4");
+           let tbody = document.getElementById("tbody");
+
+           document.getElementById("button").addEventListener("click", function() {
+               let row = document.createElement("tr");
+               let cell1 = document.createElement("td");
+               let cell2 = document.createElement("td");
+               let cell3 = document.createElement("td");
+               let cell4 = document.createElement("td");
+
+               cell1.textContent = a.value;
+               cell2.textContent = b.value;
+               cell3.textContent = c.value;
+               cell4.textContent = d.value;
+               
+               if (!isNaN(Number(a.value)) && /[A-Za-z]/.test(a.value)) {
+                   alert("valid");
+               } else {
+                   alert("invalid");
+               }
+               
+               if (!isNaN(Number(b.value)) && /[A-Za-z]/.test(b.value)) {
+                   alert("valid");
+               } else {
+                   alert("invalid");
+               }
+               
+               if (!isNaN(Number(c.value)) && /[A-Za-z]/.test(c.value)) {
+                   alert("valid");
+               } else {
+                   alert("invalid");
+               }
+               
+               if (!isNaN(Number(d.value)) && /[A-Za-z]/.test(d.value)) {
+                   alert("invalid");
+               } else {
+                   alert("valid");
+               }
+
+               row.appendChild(cell1);
+               row.appendChild(cell2);
+               row.appendChild(cell3);
+               row.appendChild(cell4);
+
+               tbody.appendChild(row);
+
+               a.value = "";
+               b.value = "";
+               c.value = "";
+               d.value = "";
+           });
+        </script>
+    </body>
+</html>
