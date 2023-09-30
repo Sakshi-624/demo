@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="loaddata">
+            <h2>this is going to change</h2>
+        </div>
+        <button class="btn btn-success" id="btnclick">click on it</button>
+    </div>
+    
+    <script>
+        $(document).ready(function () {
+            $('#btnclick').click(function () {
+                $('#loaddata').load('load.html'); // Load 'load.html' into the element with id "loaddata"
+                        alert('this is done')      });
+        });
+    </script>
+</body>
+</html>

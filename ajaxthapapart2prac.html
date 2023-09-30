@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+   <div class="container">
+    <p id="changehere">this line is going to change</p>
+    <button class="btn btn-primary btnclick">click here</button>
+    <form id="myForm">
+        <input type="text" name="name" placeholder="Enter your name">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+   </div>
+    
+    <script>
+        $(document).ready(function(){
+            $('#myForm').submit(function(event){
+                event.preventDefault(); 
+                var formData = $(this).serialize(); 
+                
+                
+                $.post('google.html', formData, function(data, status){
+                    $('#changehere').html(data);
+                    alert(status);
+                });
+            });
+
+            $('.btnclick').click(function(){
+                $.post('get.html',{name:"sakshi deshpande"},function(data,status){
+                    $('#changehere').html(data)
+                    alert(status)
+                });
+            });
+        });
+    </script>
+</body>
+</html>

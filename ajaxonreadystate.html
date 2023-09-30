@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="loaddata">
+            this is going to change
+        </div>
+        <button class="btn btn-primary" onclick="myfun()">click</button>
+    </div>
+    <script>
+      function myfun(){
+            var req=new XMLHttpRequest();
+            req.open('GET','google.html',true)
+            req.send();
+
+
+            req.onreadystatechange=function (){
+                if(req.readyState==4 && req.status ==200){
+                    document.getElementById('loaddata').innerHTML=req.responseText
+                }
+
+            }
+            req.send();
+        }
+    </script>
+</body>
+</html>

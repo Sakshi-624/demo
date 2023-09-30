@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="searchcontainer">
+            <h1>search github users</h1>
+            <p class="lead">enter a username to fetch a user profile info</p>
+            <input type="text" id="searchuser" class="form-control" placeholder="GitHub username">
+        </div>
+        <br>
+        <div id="profile">
+
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#searchuser').on('keyup', function(e){
+                let username = e.target.value;
+                // GitHub API credentials
+                const clientId = "31c548c27d93905a6e72";
+                const clientSecret = "e3a31f40c85435bdb1c26d906ee230b3b92d06db";
+                
+                // Construct the API URL
+                const apiUrl = `https://api.github.com/users/${username}?client_id=${clientId}&client_secret=${clientSecret}`;
+                
+                // Make the AJAX request
+                $.ajax({
+                    url: apiUrl,
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function(user) {
+                        // Handle the user data here
+                        console.log(user);
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle errors here
+                        console.error(xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

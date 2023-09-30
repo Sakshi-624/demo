@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="loaddata">
+            this is going to be changed
+        </div>
+        <button class="btn btn-primary" onclick="myfun()">btn</button>
+    </div>
+
+    <script>
+    function myfun() {
+        var req = new XMLHttpRequest();
+        req.open('GET', 'ajaxthapa2extension.html', true);
+        
+        req.onreadystatechange = function() {
+            if (req.readyState == 4 && req.status == 200) {
+                document.getElementById("loaddata").innerHTML = req.responseText;
+            }
+        }
+        
+        req.send();
+    }
+    </script>
+</body>
+</html>
