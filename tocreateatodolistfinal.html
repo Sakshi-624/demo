@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style>
+            .p{
+                text-decoration: line-through;
+            }
+
+        </style>
+
+
+    </head>
+    <body>
+        <input type="text" name="" id="t1" placeholder="enter your task here">
+        <br>
+        <button type="submit"  button id="button">submit</button>
+
+        <div id="output"></div>
+        <script>
+            let a=document.getElementById("t1")
+            let b=document.getElementById("button")
+            let c=document.getElementById('output')
+
+            b.addEventListener('click',function(){
+                let input=a.value
+                c.textContent=input
+              
+
+
+
+            })
+            c.addEventListener('click',function(){
+            var paragraph=document.createElement('p')
+            paragraph.textContent=c.textContent
+            c.appendChild(paragraph)
+
+            paragraph.classList.toggle('p')
+
+
+
+
+            c.appendChild('paragraph')
+        
+
+            a.value=""
+
+            })
+
+
+        </script>
+    </body>
+</html>

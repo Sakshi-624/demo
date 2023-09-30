@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <script type="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" src=""></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: auto;
+            
+            align-items:center ;
+            display: block;
+        }
+        body{
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    </div>
+    <div class="container">
+        <div class="header">
+            <h2>registration form</h2>
+        </div>
+        <form class="form" id="form">
+            <div class="form-control">
+                <label>username </label>
+
+                <input type="text" name="" id="username" placeholder="enter your full name">
+
+                <div class="form-control">
+                    <label>Password </label>
+
+                    <input type="password" name="password" id="password" placeholder="enter your password">
+
+                </div>
+                <div class="form-control">
+                    <label>phone number </label>
+
+                    <input type="number" name="phonenumber" id="phonenumber" placeholder="enter your phonenumber">
+
+                </div>
+                <div class="form-control">
+                    <label>address </label>
+
+                    <input type="text" name="address" id="address" placeholder="enter your address">
+
+                </div>
+                <button type="submit">submit</button>
+                <div id="error">
+
+
+        </form>
+        <script>
+            const name = document.getElementById('username')
+            const password = document.getElementById('password')
+            const phonenumber = document.getElementById('phonenumber')
+            const address = document.getElementById('address')
+            const form = document.getElementById('form')
+            const errorElement = document.getElementById('error')
+
+            form.addEventListener('submit', (e) => {
+                let messages = []
+                if (name.value === '' || name.value == null) {
+                    messages.push('name is required')
+                }
+
+
+                if (password.value === '' || password.value === null) {
+                    messages.push('password is required')
+                }
+
+
+
+                if (phonenumber.value === '' || phonenumber.value === null) {
+                    messages.push('phonenumber is required');
+                }
+
+                if (isNaN(phonenumber.value) || phonenumber.value.length !== 10) {
+                    messages.push('phonenumber is invalid');
+                }
+
+                if (address.value === '' || address.value === null) {
+                    messages.push('address is required')
+                }
+                if (messages.length > 0) {
+
+
+                    e.preventDefault()
+                    errorElement.innerText = messages.join(',')
+                }
+
+
+            })
+        </script>
+    </div>
+</body>
+
+</html>

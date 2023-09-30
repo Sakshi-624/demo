@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text" name="task" id="t1" placeholder="enter your task here....">
+        <br>
+        <button id="button">button</button>
+    </div>
+    <script>
+        let a =document.getElementById("t1")
+        let b=document.getElementById("button")
+
+        b.addEventListener('click',function(){
+            let inputvalue=a.value
+            let c=document.createElement('p')
+            c.appendChild('inputvalue')
+
+            
+
+
+
+
+
+            a.value=''
+        })
+
+    </script>
+    
+</body>
+</html>
